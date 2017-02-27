@@ -15,7 +15,7 @@ architecture struct of comparator is
 begin
     gt <= ((a(1) xor b(1)) and a(1)) or ((a(0) xor b(0)) and a(0));
     eq <= ((a(1) xnor b(1)) and (a(0) xnor b(0)));
-    lt <= '0';
+    lt <= ((a(1) xor b(1)) and b(1)) or ((a(0) xor b(0)) and b(0));
 end struct;
 
 architecture behavorial of comparator is
