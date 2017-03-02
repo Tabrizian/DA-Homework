@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity comparator_tb is
-
 end entity;
 
 architecture tb of comparator_tb is
