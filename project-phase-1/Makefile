@@ -1,12 +1,13 @@
 # VHDL files
 SRCDIR = src
-FILES = $(SRCDIR)/comparator.vhd
+FILES = $(SRCDIR)/half_adder.vhd $(SRCDIR)/full_adder.vhd \
+		$(SRCDIR)/multiplier_2_by_2.vhd
 
 # Testbench
 TESTDIR = test
-TESTFILES = $(TESTDIR)/comparator_tb.vhd
-SUFFIX = _out# Suffix of files created using -e option
-MODULE = comparator_tb# Show wave of this module
+TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd
+SUFFIX = # Suffix of files created using -e option
+MODULE = multiplier_2_by_2_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
