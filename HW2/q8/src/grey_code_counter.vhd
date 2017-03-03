@@ -4,6 +4,7 @@ use IEEE.std_logic_1164.all;
 entity grey_code_counter is
     port(
             clk: in std_logic;
+            reset: in std_logic;
             count: out std_logic_vector(3 downto 0)
         );
 end entity;
@@ -15,7 +16,9 @@ begin
     process(clk)
     begin
         if(clk'event and clk = '1') then
-            if(counter = "0000") then
+            if(reset = '1') then
+                counter <= "0000";
+            elsif(counter = "0000") then
                 counter <= "0001";
             elsif (counter = "0001") then
                 counter <= "0011";
