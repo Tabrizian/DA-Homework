@@ -99,10 +99,11 @@ begin
     half_adder_1: half_adder port map(full_adder_1_cout, full_adder_2_s, v(3),
                   half_adder_1_cout);
 
+    -- Misterous
     full_adder_6: full_adder port map(half_adder_1_cout, full_adder_3_s,
-                  multiplier_2_by_2_2_res(3), v(4), full_adder_6_cout);
+                  multiplier_2_by_2_4_res(0), v(4), full_adder_6_cout);
 
-    full_adder_5: full_adder port map(multiplier_2_by_2_4_res(0), full_adder_3_cout,
+    full_adder_5: full_adder port map(multiplier_2_by_2_1_res(3), full_adder_3_cout,
                   multiplier_2_by_2_3_res(3), full_adder_5_s, full_adder_5_cout);
 
     full_adder_7: full_adder port map(full_adder_6_cout, full_adder_5_s,
