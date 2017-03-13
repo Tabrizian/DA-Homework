@@ -12,27 +12,10 @@ architecture selected_signal_assignment of spaghetti_controller is
 begin
 
     with pressure select output <=
-        "00" when 5,
-        "00" when 6,
-        "00" when 7,
-        "00" when 8,
-        "00" when 9,
-        "00" when 10,
-        "01" when 11,
-        "01" when 12,
-        "01" when 13,
-        "01" when 14,
-        "01" when 15,
-        "10" when 16,
-        "10" when 17,
-        "10" when 18,
-        "10" when 19,
-        "10" when 20,
-        "11" when 21,
-        "10" when 22,
-        "10" when 23,
-        "10" when 24,
-        "10" when 25,
+        "00" when 5 to 10,
+        "01" when 11 to 15,
+        "10" when 16 to 20,
+        "11" when 21 to 25,
         "UU" when others;
 
 end selected_signal_assignment;
