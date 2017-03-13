@@ -5,16 +5,21 @@ entity frequency_divider is
     generic (n: integer);
     port(
             clk: in std_logic;
+            reset: in std_logic;
             divided: out std_logic
         );
 end entity;
 
 architecture behavorial of frequency_divider is
 begin
-    process(clk)
+    process(clk, reset)
         variable counter: integer := 0;
         variable first: integer := 0;
     begin
+        if(reset = '1') then
+           counter := 0;
+       end if;
+
         if(clk'event and clk = '1') then
             if(counter mod n = 0) then
                 counter := 0;
