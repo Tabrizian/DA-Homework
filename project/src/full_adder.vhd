@@ -11,7 +11,7 @@ entity full_adder is
         );
 end entity;
 
-architecture behavorial of full_adder is
+architecture struct of full_adder is
     component half_adder
         port(
                 a: in std_logic;
@@ -27,4 +27,4 @@ begin
     half_adder_1: half_adder port map (a, b, s1, cout1);
     half_adder_2: half_adder port map (s1, cin, s, cout2);
     cout <= cout1 or cout2;
-end behavorial;
+end struct;
