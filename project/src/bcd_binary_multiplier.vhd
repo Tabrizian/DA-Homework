@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity bcd_multiplier is
+entity bcd_binary_multiplier is
     port(
             a: in std_logic_vector(3 downto 0);
             b: in std_logic_vector(3 downto 0);
@@ -9,7 +9,7 @@ entity bcd_multiplier is
         );
 end entity;
 
-architecture struct of bcd_multiplier is
+architecture struct of bcd_binary_multiplier is
     component half_adder
         port(
                 a: in std_logic;
