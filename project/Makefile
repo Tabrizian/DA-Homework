@@ -1,14 +1,17 @@
 # VHDL files
 SRCDIR = src
 FILES = $(SRCDIR)/half_adder.vhd $(SRCDIR)/full_adder.vhd \
-		$(SRCDIR)/multiplier_2_by_2.vhd $(SRCDIR)/bcd_multiplier.vhd
+		$(SRCDIR)/multiplier_2_by_2.vhd $(SRCDIR)/n_bit_adder.vhd \
+		$(SRCDIR)/binary_to_bcd.vhd
 
 # Testbench
 TESTDIR = test
-TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd $(TESTDIR)/bcd_multiplier_tb.vhd
+TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd \
+			$(TESTDIR)/bcd_multiplier_tb.vhd \
+			$(TESTDIR)/binary_to_bcd_tb.vhd
 
 SUFFIX = # Suffix of files created using -e option
-MODULE = bcd_multiplier_tb# Show wave of this module
+MODULE = binary_to_bcd_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
