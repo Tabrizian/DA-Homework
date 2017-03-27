@@ -19,6 +19,6 @@ architecture tb of bcd_8_by_1_multiplier_tb is
 
 begin
     mapping: bcd_8_by_1_multiplier port map(a, b, res);
-    a <= "00000000000000000000000000010001";
+    a <= "01000000000000000000000100010001";
     b <= "1001";
 end tb;
