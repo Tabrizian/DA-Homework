@@ -13,7 +13,6 @@ TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd \
 			$(TESTDIR)/binary_to_bcd_tb.vhd $(TESTDIR)/bcd_adder_tb.vhd \
 			$(TESTDIR)/bcd_8_by_1_multiplier_tb.vhd
 
-SUFFIX = # Suffix of files created using -e option
 MODULE = bcd_8_by_1_multiplier_tb# Show wave of this module
 STOPTIME = 3500ns
 
@@ -29,9 +28,9 @@ all: | ghdl-compile ghdl-simulate show
 ghdl-compile: $(FILES) $(TESTFILES)
 	$(GHDL_CMD) -a $(GHDL_FLAGS) $(FILES) $(TESTFILES)
 clean:
-	rm *.o work-obj93.cf *.vcd *$(SUFFIX)
+	rm work-obj93.cf *.vcd
 ghdl-simulate:
-	$(GHDL_CMD) -e -o $(MODULE)$(SUFFIX) $(MODULE)
+	$(GHDL_CMD) -e -o $(MODULE) $(MODULE)
 show:
-	$(GHDL_CMD) -r $(MODULE)$(SUFFIX) $(RUN_FLAGS)
+	$(GHDL_CMD) -r $(MODULE) $(RUN_FLAGS)
 	gtkwave $(MODULE).vcd
