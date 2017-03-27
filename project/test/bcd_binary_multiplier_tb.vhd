@@ -5,7 +5,7 @@ entity bcd_multiplier_tb is
 end entity;
 
 architecture tb of bcd_multiplier_tb is
-    component bcd_multiplier is
+    component bcd_binary_multiplier is
         port(
                 a: in std_logic_vector(3 downto 0);
                 b: in std_logic_vector(3 downto 0);
@@ -18,7 +18,7 @@ architecture tb of bcd_multiplier_tb is
     signal v: std_logic_vector(7 downto 0);
 
 begin
-    mapping: bcd_multiplier port map(a, b, v);
+    mapping: bcd_binary_multiplier port map(a, b, v);
 
     a <= "0000" after 0 ns,
          "0100" after 10 ns,
