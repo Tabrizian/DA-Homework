@@ -4,16 +4,19 @@ FILES = $(SRCDIR)/half_adder.vhd $(SRCDIR)/full_adder.vhd \
 		$(SRCDIR)/multiplier_2_by_2.vhd $(SRCDIR)/n_bit_adder.vhd \
 		$(SRCDIR)/binary_to_bcd.vhd $(SRCDIR)/bcd_adder.vhd \
 		$(SRCDIR)/bcd_8_by_1_multiplier.vhd \
-		$(SRCDIR)/bcd_binary_multiplier.vhd
+		$(SRCDIR)/bcd_binary_multiplier.vhd \
+		$(SRCDIR)/bcd_64_bit_adder.vhd \
+		$(SRCDIR)/bcd_adder_simple.vhd
 
 # Testbench
 TESTDIR = test
 TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd \
 			$(TESTDIR)/bcd_binary_multiplier_tb.vhd \
 			$(TESTDIR)/binary_to_bcd_tb.vhd $(TESTDIR)/bcd_adder_tb.vhd \
-			$(TESTDIR)/bcd_8_by_1_multiplier_tb.vhd
+			$(TESTDIR)/bcd_8_by_1_multiplier_tb.vhd \
+			$(TESTDIR)/bcd_64_bit_adder_tb.vhd
 
-MODULE = bcd_8_by_1_multiplier_tb# Show wave of this module
+MODULE = bcd_64_bit_adder_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
