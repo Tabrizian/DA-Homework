@@ -1,10 +1,10 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity bcd_multiplier_tb is
+entity bcd_binary_multiplier_tb is
 end entity;
 
-architecture tb of bcd_multiplier_tb is
+architecture tb of bcd_binary_multiplier_tb is
     component bcd_binary_multiplier is
         port(
                 a: in std_logic_vector(3 downto 0);
