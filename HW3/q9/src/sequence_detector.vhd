@@ -1,0 +1,155 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.common.all;
+
+entity seqeuence_detector is
+    port(
+            input: in gene;
+            clk: in std_logic;
+            output: out std_logic_vector(1 downto 0)
+        );
+end seqeuence_detector;
+
+architecture behavorial of seqeuence_detector is
+    type STATE_TYPE is (s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12);
+    signal state: STATE_TYPE := s0;
+begin
+    process(clk)
+        variable length: integer := 0;
+        variable remain: integer := 0;
+    begin
+        case state is
+            when s0 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s1 =>
+                if(input = A) then
+                    state <= s2;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s2 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s3;
+                elsif(input = C) then
+                    state <= s11;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s3 =>
+                if(input = A) then
+                    state <= s4;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s4 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s5;
+                elsif(input = C) then
+                    state <= s11;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s5 =>
+                if(input = A) then
+                    state <= s6;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s6 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s7;
+                elsif(input = C) then
+                    state <= s11;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s7 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s8;
+                end if;
+            when s8 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s9;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s9 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s10 =>
+                if(input = A) then
+                    state <= s2;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s11;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+            when s11 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s0;
+                elsif(input = G) then
+                    state <= s10;
+                end if;
+            when s12 =>
+                if(input = A) then
+                    state <= s12;
+                elsif(input = T) then
+                    state <= s0;
+                elsif(input = C) then
+                    state <= s11;
+                elsif(input = G) then
+                    state <= s1;
+                end if;
+        end case;
+
+    end process;
+end behavorial;
