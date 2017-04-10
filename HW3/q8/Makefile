@@ -1,13 +1,12 @@
 # VHDL files
 SRCDIR = src
-FILES = $(SRCDIR)/common.vhd \
-		$(SRCDIR)/sequence_detector.vhd
+FILES = $(SRCDIR)/averager.vhd
 
 # Testbench
 TESTDIR = test
-TESTFILES = $(TESTDIR)/sequence_detector_tb.vhd
+TESTFILES = $(TESTDIR)/averager_tb.vhd
 
-MODULE = sequence_detector_tb# Show wave of this module
+MODULE = averager_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run

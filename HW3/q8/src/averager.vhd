@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity averager is
     port(
-            input: in natural range 15 to 40;
+            input: in natural range 0 to 40;
             average: inout integer := 0;
             clk: in std_logic
         );
