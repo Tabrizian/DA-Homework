@@ -5,9 +5,9 @@ FILES = $(SRCDIR)/common.vhd \
 
 # Testbench
 TESTDIR = test
-TESTFILES =
+TESTFILES = $(TESTDIR)/sequence_detector_tb.vhd
 
-MODULE = counter_tb# Show wave of this module
+MODULE = sequence_detector_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
