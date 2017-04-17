@@ -50,7 +50,7 @@ begin
         if(clk'event and clk = '1') then
             if(i < 7) then
                 if(state = WAITING) then
-                    multipicand <= b(4 * (7 - i) - 1 downto 4 * (7 - i - 1));
+                    multipicand <= b(4 * (8 - i) - 1 downto 4 * (8 - i - 1));
                     final_result <= std_logic_vector(unsigned(final_result) sll 4);
                     state := MULTIPLYING;
                 elsif(state = MULTIPLYING) then
