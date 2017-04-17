@@ -41,7 +41,7 @@ begin
     digit_multiplier: bcd_8_by_1_multiplier port map(a, multipicand, res);
     adder: bcd_64_bit_adder port map(final_result, to_be_added, addition);
 
-    process(clk, a, b)
+    process(clk)
         variable i: integer := 0;
         variable state: integer := 0;
         constant WAITING: integer := 0;
@@ -68,6 +68,10 @@ begin
             elsif(i = 8) then
                 c <= final_result;
             else
+            end if;
+            if(rst = '1') then
+                state := WAITING;
+                i := 0;
             end if;
         end if;
         if(a'event or b'event) then
