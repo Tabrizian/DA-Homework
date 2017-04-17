@@ -4,10 +4,11 @@ use IEEE.numeric_std.all;
 
 entity bcd_multiplier_seq is
     port(
-            a: in std_logic_vector(31 downto 0);
-            b: in std_logic_vector(31 downto 0);
-            c: out std_logic_vector(63 downto 0);
-            clk: in std_logic
+            a: in std_logic_vector(31 downto 0) := (others => '0');
+            b: in std_logic_vector(31 downto 0) := (others => '0');
+            c: out std_logic_vector(63 downto 0) := (others => '0');
+            rst : in std_logic := '0';
+            clk: in std_logic := '0'
         );
 end entity;
 

@@ -10,6 +10,7 @@ architecture tb of bcd_multiplier_seq_tb is
                 a: in std_logic_vector(31 downto 0);
                 b: in std_logic_vector(31 downto 0);
                 c: out std_logic_vector(63 downto 0);
+                rst: in std_logic;
                 clk: in std_logic
             );
     end component;
@@ -17,9 +18,10 @@ architecture tb of bcd_multiplier_seq_tb is
     signal a, b: std_logic_vector(31 downto 0) := (others => '0');
     signal c: std_logic_vector(63 downto 0) := (others => '0');
     signal clk: std_logic := '0';
+    signal rst: std_logic := '0';
 
 begin
-    mapping: bcd_multiplier_seq port map(a, b, c, clk);
+    mapping: bcd_multiplier_seq port map(a, b, c, rst, clk);
     a(31 downto 24) <= "10011001";
     b(31 downto 24) <= "10011001";
     clk <= not clk after 5 ns;
