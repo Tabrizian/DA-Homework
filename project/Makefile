@@ -20,7 +20,7 @@ TESTFILES = $(TESTDIR)/multiplier_2_by_2_tb.vhd \
 			$(TESTDIR)/bcd_multiplier_tb.vhd \
 			$(TESTDIR)/bcd_multiplier_seq_tb.vhd
 
-MODULE = bcd_multiplier_seq_tb# Show wave of this module
+MODULE = bcd_multiplier_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
