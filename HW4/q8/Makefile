@@ -1,8 +1,12 @@
+# VHDL files
+SRCDIR = src
+FILES = $(SRCDIR)/counter.vhd
+
 # Testbench
 TESTDIR = test
-TESTFILES = $(TESTDIR)/simulate.vhd
+TESTFILES = $(TESTDIR)/counter_tb.vhd
 
-MODULE = question# Show wave of this module
+MODULE = counter_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
@@ -14,8 +18,8 @@ GHDL_FLAGS = #-fexplicit --ieee=standard
 
 all: | ghdl-compile ghdl-simulate show
 
-ghdl-compile: $(TESTFILES)
-	$(GHDL_CMD) -a $(GHDL_FLAGS) $(TESTFILES)
+ghdl-compile: $(FILES) $(TESTFILES)
+	$(GHDL_CMD) -a $(GHDL_FLAGS) $(FILES) $(TESTFILES)
 clean:
 	rm work-obj93.cf *.vcd
 ghdl-simulate:

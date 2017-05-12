@@ -26,7 +26,7 @@ begin
                     when s0 =>
                         if(zero = '1') then
                             state <= s1;
-                        else
+                        elsif(one = '1') then
                             state <= trap;
                         end if;
                         unlock <= '0';
