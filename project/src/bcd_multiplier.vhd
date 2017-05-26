@@ -5,7 +5,8 @@ entity bcd_multiplier is
     port(
             a: in std_logic_vector(31 downto 0) := (others => '0');
             b: in std_logic_vector(31 downto 0) := (others => '0');
-            c: out std_logic_vector(63 downto 0) := (others => '0')
+            c_high: out std_logic_vector(31 downto 0) := (others => '0');
+            c_low: out std_logic_vector(31 downto 0) := (others => '0')
         );
 end entity;
 
@@ -42,7 +43,8 @@ begin
         adder: bcd_64_bit_adder port map(res(i), intermediate(i - 2), intermediate(i - 1));
     end generate add_digit;
 
-    c <= intermediate(6);
+    c_high <= intermediate(6)(63 downto 32);
+    c_low <= intermediate(6)(31 downto 0);
 
 
 end struct;
