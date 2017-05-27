@@ -24,8 +24,22 @@ architecture tb of elevator_tb is
             );
     end component;
 
-    signal floor_3_key_down
+    signal floor_1_key_up: std_logic;
+    signal floor_1_key_down: std_logic;
+    signal floor_2_key_up: std_logic;
+    signal floor_2_key_down: std_logic;
+    signal floor_3_key_up: std_logic;
+    signal floor_3_key_down: std_logic;
+    signal floor_1: std_logic;
+    signal floor_2: std_logic;
+    signal floor_3: std_logic;
+    signal no_stop: std_logic;
+    signal clk: std_logic;
+    signal floor: std_logic;
 
 begin
+    mapping: elevator port map(floor_1_key_up, floor_1_key_down,
+                floor_2_key_up, floor_2_key_down, floor_3_key_up,
+                floor_3_key_down, floor_1, floor_2, floor_3);
 
 end tb;
