@@ -26,11 +26,11 @@ begin
     re <= std_logic_vector(to_unsigned(to_integer(unsigned(b)) + to_integer(unsigned(key)), 7));
 
     l1 <= le xor re;
-    l1_shifted <= l1(6 downto 0) & '0';
+    l1_shifted <= l1(6 downto 0) & l1(7);
     result_a <= std_logic_vector(to_unsigned(to_integer(unsigned(l1_shifted)) + to_integer(unsigned(key)), 7));
 
     r1 <= result_a xor re;
-    r1_shifted <= r1(6 downto 0) & '0';
+    r1_shifted <= r1(6 downto 0) & r1(7);
     result_b <= std_logic_vector(to_unsigned(to_integer(unsigned(r1_shifted)) + to_integer(unsigned(key)), 7));
 
     outputa <= result_a;
