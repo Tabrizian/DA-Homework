@@ -3,7 +3,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity cryptor is
+entity elevator is
     port(
             floor_1_key_up: in std_logic;
             floor_1_key_down: in std_logic;
@@ -15,14 +15,18 @@ entity cryptor is
             floor_2: in std_logic;
             floor_3: in std_logic;
             no_stop: in std_logic;
-            clk: in std_logic
+            clk: in std_logic;
+            floor: out integer
         );
 end entity;
 
-architecture rtl of cryptor is
+architecture rtl of elevator is
 
-    type STATE is (S1, S2, S3);
-    signal current_state: STATE := S1;
+
+    constant S1: integer := 1;
+    constant S2: integer := 2;
+    constant S3: integer := 3;
+    signal current_state: integer := S1;
 
 
 begin
@@ -75,6 +79,8 @@ begin
 
                         end if;
                     end if;
+                when others =>
+
             end case;
         end if;
     end process;
