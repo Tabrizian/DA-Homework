@@ -20,26 +20,31 @@ architecture tb of elevator_tb is
                 floor_3: in std_logic;
                 no_stop: in std_logic;
                 clk: in std_logic;
-                floor: out std_logic
+                floor: out integer
             );
     end component;
 
-    signal floor_1_key_up: std_logic;
-    signal floor_1_key_down: std_logic;
-    signal floor_2_key_up: std_logic;
-    signal floor_2_key_down: std_logic;
-    signal floor_3_key_up: std_logic;
-    signal floor_3_key_down: std_logic;
-    signal floor_1: std_logic;
-    signal floor_2: std_logic;
-    signal floor_3: std_logic;
-    signal no_stop: std_logic;
-    signal clk: std_logic;
-    signal floor: std_logic;
+    signal floor_1_key_up: std_logic := '0';
+    signal floor_1_key_down: std_logic := '0';
+    signal floor_2_key_up: std_logic := '0';
+    signal floor_2_key_down: std_logic := '0';
+    signal floor_3_key_up: std_logic := '0';
+    signal floor_3_key_down: std_logic := '0';
+    signal floor_1: std_logic := '0';
+    signal floor_2: std_logic := '0';
+    signal floor_3: std_logic := '0';
+    signal no_stop: std_logic := '0';
+    signal clk: std_logic := '0';
+    signal floor: integer := 1;
 
 begin
     mapping: elevator port map(floor_1_key_up, floor_1_key_down,
                 floor_2_key_up, floor_2_key_down, floor_3_key_up,
-                floor_3_key_down, floor_1, floor_2, floor_3);
+                floor_3_key_down, floor_1, floor_2, floor_3, no_stop, clk,
+                floor);
+
+    floor_3 <= '1';
+    floor_2_key_up <= '1';
+    clk <= not clk after 2 ns;
 
 end tb;
