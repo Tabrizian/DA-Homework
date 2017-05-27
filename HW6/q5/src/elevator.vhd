@@ -34,6 +34,7 @@ begin
     process(clk)
     begin
         if(rising_edge(clk)) then
+            floor <= current_state;
             case current_state is
                 when S1 =>
                     if(floor_1 = '1') then
@@ -64,12 +65,12 @@ begin
 
                 when S3 =>
                     if(floor_3 = '1') then
-                        current_state <= S1;
+                        current_state <= S3;
                     elsif(floor_2 = '1') then
                         current_state <= S2;
                     elsif(floor_1 = '1') then
                         if(no_stop = '1') then
-                            current_state <= S3;
+                            current_state <= S1;
                         else
                             if(floor_2_key_down = '1') then
                                 current_state <= S2;

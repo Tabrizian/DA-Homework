@@ -1,12 +1,12 @@
 # VHDL files
 SRCDIR = src
-FILES = $(SRCDIR)/counter.vhd
+FILES = $(SRCDIR)/elevator.vhd
 
 # Testbench
 TESTDIR = test
-TESTFILES = $(TESTDIR)/counter_tb.vhd
+TESTFILES = $(TESTDIR)/elevator_tb.vhd
 
-MODULE = counter_tb# Show wave of this module
+MODULE = elevator_tb# Show wave of this module
 STOPTIME = 3500ns
 
 # Run
