@@ -130,6 +130,30 @@
                 unidirectional channel for a handshake data flow.
         \end{itemize}
 
+    \item
+        In this question we tried to break up to two modules: First module is
+        stage which does what this circuit is supposed to do in one stage and
+        a second module called cryptor which creates an instance from the previous
+        section module and only alters inputs.
+
+        Here is the source code to stage module:
+        \inputminted{vhdl}{q4/src/stage.vhd}
+
+        Here is the source code to cryptor module:
+        \inputminted{vhdl}{q4/src/cryptor.vhd}
+
+    \item
+        Here is the source code to elevator:
+
+        \inputminted{vhdl}{q5/src/elevator.vhd}
+
+        And below is the testbench:
+        \inputminted{vhdl}{q5/test/elevator_tb.vhd}
+
+        And here is the simulation result:
+        \includegraphics[scale=0.7]{q5/elevator.png}
+
+
 \end{itemize}
 
 
