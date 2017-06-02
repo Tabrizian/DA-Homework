@@ -128,6 +128,21 @@
                 data-flow paradigm where the concept of an address is not
                 present or not required. Each AXI4-Stream acts as a single
                 unidirectional channel for a handshake data flow.
+
+                \textbf{Lite}:  All transactions are of burst length 1
+                all data accesses use the full width of the data bus
+                AXI4-Lite supports a data bus width of 32-bit or 64-bit. \\
+                all accesses are Non-modifiable, Non-bufferable
+                Exclusive accesses are not supported.
+
+                \textbf{Full}: This section provides a brief overview of how the AXI interface works. The Introduction,
+                page 5, provides the procedure for obtaining the ARM specification. Consult those
+                specifications for the complete details on AXI operation.
+                The AXI specifications describe an interface between a single AXI master and a single AXI
+                slave, representing IP cores that exchange information with each other. Memory mapped
+                AXI masters and slaves can be connected together using a structure called an Interconnect
+                block. The Xilinx AXI Interconnect IP contains AXI-compliant master and slave interfaces,
+                and can be used to route transactions between one or more AXI masters and slaves.
         \end{itemize}
 
     \item
@@ -143,14 +158,22 @@
         \inputminted{vhdl}{q4/src/cryptor.vhd}
 
     \item
+        Below is the Finite state machine of this elevator:
+
+        \begin{center}
+            \includegraphics[scale=0.6]{q5/fsm.pdf}
+        \end{center}
+
         Here is the source code to elevator:
 
         \inputminted{vhdl}{q5/src/elevator.vhd}
 
         And below is the testbench:
+
         \inputminted{vhdl}{q5/test/elevator_tb.vhd}
 
         And here is the simulation result:
+
         \includegraphics[scale=0.7]{q5/elevator.png}
 
 
